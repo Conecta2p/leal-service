@@ -99,3 +99,142 @@ document.addEventListener("DOMContentLoaded", function () {
     card.style.animationDelay = `${index * 0.5}s`;
   });
 });
+
+// Carrossel do Hero Section - Versão Imagem Completa
+function initHeroCarousel() {
+  const slides = document.querySelectorAll(".carousel-slide");
+  const indicators = document.querySelectorAll(".indicator");
+  const prevBtn = document.querySelector(".carousel-control.prev");
+  const nextBtn = document.querySelector(".carousel-control.next");
+
+  let currentSlide = 0;
+  let autoPlayInterval;
+  let isTransitioning = false;
+
+  // Função para mostrar slide específico
+  function showSlide(index) {
+    if (isTransitioning) return;
+
+    isTransitioning = true;
+
+    // Remove classe active de todos os slides
+    slides.forEach((slide) => slide.classList.remove("active"));
+    indicators.forEach((indicator) => indicator.classList.remove("active"));
+
+    // Adiciona classe active ao slide atual
+    slides[index].classList.add("active");
+    indicators[index].classList.add("active");
+
+    currentSlide = index;
+
+    // Reset do flag após a transição
+    setTimeout(() => {
+      isTransitioning = false;
+    }, 1000);
+  }
+
+  // Função para próximo slide
+  function nextSlide() {
+    let nextIndex = (currentSlide + 1) % slides.length;
+    showSlide(nextIndex);
+  }
+
+  // Função para slide anterior
+  function prevSlide() {
+    let prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(prevIndex);
+  }
+
+  // Event listeners para controles
+  if (nextBtn) {
+    nextBtn.addEventListener("click", () => {
+      nextSlide();
+      resetAutoPlay();
+    });
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener("click", () => {
+      prevSlide();
+      resetAutoPlay();
+    });
+  }
+
+  // Event listeners para indicadores
+  indicators.forEach((indicator, index) => {
+    indicator.addEventListener("click", () => {
+      showSlide(index);
+      resetAutoPlay();
+    });
+  });
+
+  // Auto-play
+  function startAutoPlay() {
+    autoPlayInterval = setInterval(nextSlide, 5000);
+  }
+
+  function resetAutoPlay() {
+    clearInterval(autoPlayInterval);
+    startAutoPlay();
+  }
+
+  // Pausar auto-play no hover
+  const heroSection = document.querySelector(".hero");
+  if (heroSection) {
+    heroSection.addEventListener("mouseenter", () => {
+      clearInterval(autoPlayInterval);
+    });
+
+    heroSection.addEventListener("mouseleave", () => {
+      startAutoPlay();
+    });
+  }
+
+  // Navegação por teclado
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft") {
+      prevSlide();
+      resetAutoPlay();
+    } else if (e.key === "ArrowRight") {
+      nextSlide();
+      resetAutoPlay();
+    }
+  });
+
+  // Swipe para dispositivos móveis
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  document.addEventListener("touchstart", (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  });
+
+  document.addEventListener("touchend", (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  });
+
+  function handleSwipe() {
+    const swipeThreshold = 50;
+
+    if (touchEndX < touchStartX - swipeThreshold) {
+      // Swipe left - next slide
+      nextSlide();
+      resetAutoPlay();
+    }
+
+    if (touchEndX > touchStartX + swipeThreshold) {
+      // Swipe right - previous slide
+      prevSlide();
+      resetAutoPlay();
+    }
+  }
+
+  // Iniciar auto-play
+  startAutoPlay();
+}
+
+// Inicializar carrossel quando o DOM estiver carregado
+document.addEventListener("DOMContentLoaded", function () {
+  initHeroCarousel();
+});

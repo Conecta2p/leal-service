@@ -23,9 +23,6 @@
     />
   </head>
   <body>
-    <!-- Background Particles -->
-    <div id="particles-js"></div>
-
     <!-- Header -->
     <header class="header">
       <div class="container">
@@ -39,7 +36,7 @@
             <li><a href="#servicos">Serviços</a></li>
             <li><a href="#vantagens">Vantagens</a></li>
             <li><a href="#clientes">Clientes</a></li>
-            <li><a href="contato.html" class="btn-outline">Contato</a></li>
+            <li><a href="contato.html">Contato</a></li>
           </ul>
         </nav>
         <div class="menu-toggle">
@@ -50,47 +47,136 @@
       </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="hero-content">
-        <div class="hero-text">
-          <div class="badge">26 Anos de Experiência</div>
-          <h1 class="hero-title">
-            Excelência em <span class="highlight">Facilities</span> e Serviços
-            Terceirizados
+    <!-- Conteúdo Principal sobre o Carrossel -->
+    <section class="home-section">
+      <div class="home-content">
+        <div class="home-text">
+          <div class="experience-badge">26 Anos de Experiência</div>
+          <h1 class="home-title">
+            Excelência em Facilities e Serviços Terceirizados
           </h1>
-          <p class="hero-subtitle">
+          <p class="home-description">
             Soluções completas em portaria, limpeza, jardinagem e zeladoria para
             empresas e condomínios. Conte com nossa experiência de 26 anos para
             otimizar sua operação.
           </p>
-          <div class="hero-buttons">
+          <div class="home-actions">
             <a href="#servicos" class="btn-primary">Nossos Serviços</a>
             <a href="contato.html" class="btn-secondary">Solicitar Orçamento</a>
           </div>
         </div>
-        <div class="hero-visual">
-          <div class="floating-card card-1">
-            <i class="fas fa-shield-alt"></i>
-            <span>Portaria</span>
-          </div>
-          <div class="floating-card card-2">
-            <i class="fas fa-broom"></i>
-            <span>Limpeza</span>
-          </div>
-          <div class="floating-card card-3">
-            <i class="fas fa-leaf"></i>
-            <span>Jardinagem</span>
-          </div>
-          <div class="floating-card card-4">
-            <i class="fas fa-tools"></i>
-            <span>Zeladoria</span>
-          </div>
-        </div>
       </div>
       <div class="scroll-indicator">
-        <span>Scroll</span>
+        <span>Descubra mais</span>
         <div class="arrow"></div>
+      </div>
+    </section>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-carousel">
+        <!-- Slide 1 - Portaria -->
+        <div class="carousel-slide active" data-slide="0">
+          <div
+            class="slide-background"
+            style="
+              background: linear-gradient(
+                  rgba(0, 23, 52, 0.7),
+                  rgba(0, 23, 52, 0.7)
+                ),
+                url('assets/images/portaria-bg.jpg') center/cover;
+            "
+          >
+            <div class="slide-content">
+              <h2 class="slide-title">Portaria e Recepção</h2>
+              <p class="slide-subtitle">
+                Profissionais treinados para segurança e atendimento de
+                excelência 24 horas
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 - Limpeza -->
+        <div class="carousel-slide" data-slide="1">
+          <div
+            class="slide-background"
+            style="
+              background: linear-gradient(
+                  rgba(0, 23, 52, 0.7),
+                  rgba(0, 23, 52, 0.7)
+                ),
+                url('assets/images/limpeza-bg.jpg') center/cover;
+            "
+          >
+            <div class="slide-content">
+              <h2 class="slide-title">Limpeza e Conservação</h2>
+              <p class="slide-subtitle">
+                Serviços especializados para ambientes sempre impecáveis e
+                higienizados
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 - Jardinagem -->
+        <div class="carousel-slide" data-slide="2">
+          <div
+            class="slide-background"
+            style="
+              background: linear-gradient(
+                  rgba(0, 23, 52, 0.7),
+                  rgba(0, 23, 52, 0.7)
+                ),
+                url('assets/images/jardinagem-bg.jpg') center/cover;
+            "
+          >
+            <div class="slide-content">
+              <h2 class="slide-title">Jardinagem</h2>
+              <p class="slide-subtitle">
+                Cuidamos das suas áreas verdes com expertise, dedicação e
+                paisagismo
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 4 - Zeladoria -->
+        <div class="carousel-slide" data-slide="3">
+          <div
+            class="slide-background"
+            style="
+              background: linear-gradient(
+                  rgba(0, 23, 52, 0.7),
+                  rgba(0, 23, 52, 0.7)
+                ),
+                url('assets/images/zeladoria-bg.jpg') center/cover;
+            "
+          >
+            <div class="slide-content">
+              <h2 class="slide-title">Zeladoria</h2>
+              <p class="slide-subtitle">
+                Manutenção preventiva e corretiva para suas instalações sempre
+                funcionais
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Controles do Carrossel -->
+        <button class="carousel-control prev">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="carousel-control next">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+
+        <!-- Indicadores -->
+        <div class="carousel-indicators">
+          <span class="indicator active" data-slide="0"></span>
+          <span class="indicator" data-slide="1"></span>
+          <span class="indicator" data-slide="2"></span>
+          <span class="indicator" data-slide="3"></span>
+        </div>
       </div>
     </section>
 
@@ -426,8 +512,6 @@
       </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="js/particles.js"></script>
     <script src="js/main.js"></script>
     <script src="js/animations.js"></script>
   </body>
