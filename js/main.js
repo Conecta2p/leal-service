@@ -3,10 +3,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const menuToggle = document.querySelector(".menu-toggle");
   const nav = document.querySelector(".nav");
 
-  menuToggle.addEventListener("click", function () {
-    nav.classList.toggle("active");
-    menuToggle.classList.toggle("active");
-  });
+  if (menuToggle) {
+    menuToggle.addEventListener("click", function () {
+      nav.classList.toggle("active");
+      menuToggle.classList.toggle("active");
+    });
+  }
 
   // Fechar menu ao clicar em um link
   const navLinks = document.querySelectorAll(".nav ul li a");
@@ -19,15 +21,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Header scroll effect
   const header = document.querySelector(".header");
-  window.addEventListener("scroll", function () {
-    if (window.scrollY > 100) {
-      header.style.background = "rgba(255, 255, 255, 0.95)";
-      header.style.backdropFilter = "blur(10px)";
-    } else {
-      header.style.background = "var(--white)";
-      header.style.backdropFilter = "none";
-    }
-  });
+  if (header) {
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 100) {
+        header.style.background = "rgba(255, 255, 255, 0.95)";
+        header.style.backdropFilter = "blur(10px)";
+      } else {
+        header.style.background = "var(--white)";
+        header.style.backdropFilter = "none";
+      }
+    });
+  }
 
   // Form submission
   const contactForm = document.getElementById("form-contato");
@@ -86,4 +90,30 @@ document.addEventListener("DOMContentLoaded", function () {
       autoScroll();
     }, 2000);
   }
+
+  // Inicializar contadores imediatamente (não esperar pela animação)
+  animateCounters();
 });
+
+// Função de contadores (movida para fora do DOMContentLoaded)
+function animateCounters() {
+  const counters = document.querySelectorAll(".counter");
+
+  counters.forEach((counter) => {
+    const target = +counter.getAttribute("data-target");
+    const increment = target / 100;
+    let current = 0;
+
+    const updateCounter = () => {
+      if (current < target) {
+        current += increment;
+        counter.textContent = Math.ceil(current);
+        setTimeout(updateCounter, 20);
+      } else {
+        counter.textContent = target;
+      }
+    };
+
+    updateCounter();
+  });
+}

@@ -1,27 +1,10 @@
 // Animações de entrada
 document.addEventListener("DOMContentLoaded", function () {
-  // Contadores animados
-  const counters = document.querySelectorAll(".counter");
-
-  const animateCounters = () => {
-    counters.forEach((counter) => {
-      const target = +counter.getAttribute("data-target");
-      const increment = target / 100;
-      let current = 0;
-
-      const updateCounter = () => {
-        if (current < target) {
-          current += increment;
-          counter.textContent = Math.ceil(current);
-          setTimeout(updateCounter, 20);
-        } else {
-          counter.textContent = target;
-        }
-      };
-
-      updateCounter();
-    });
-  };
+  // Adicionar classe fade-in para elementos específicos
+  const sections = document.querySelectorAll(".section");
+  sections.forEach((section) => {
+    section.classList.add("fade-in");
+  });
 
   // Observador de elementos para animações de entrada
   const observerOptions = {
@@ -33,11 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("visible");
-
-        // Iniciar contadores quando a seção hero estiver visível
-        if (entry.target.classList.contains("hero")) {
-          setTimeout(animateCounters, 500);
-        }
       }
     });
   }, observerOptions);
@@ -45,12 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // Observar elementos para animação
   const elementsToAnimate = document.querySelectorAll(".fade-in");
   elementsToAnimate.forEach((el) => observer.observe(el));
-
-  // Adicionar classe fade-in para elementos específicos
-  const sections = document.querySelectorAll(".section");
-  sections.forEach((section) => {
-    section.classList.add("fade-in");
-  });
 
   // Animações de hover para cards de serviços
   const serviceCards = document.querySelectorAll(".servico-card");
@@ -84,4 +56,10 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+
+  // Forçar exibição do conteúdo após carregamento
+  setTimeout(() => {
+    document.body.style.visibility = "visible";
+    document.body.style.opacity = "1";
+  }, 100);
 });

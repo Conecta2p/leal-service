@@ -14,11 +14,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
   </head>
   <body>
+    <!-- Background Particles -->
+    <div id="particles-js"></div>
+
     <!-- Header -->
     <header class="header">
       <div class="container">
@@ -32,7 +39,7 @@
             <li><a href="#servicos">Serviços</a></li>
             <li><a href="#vantagens">Vantagens</a></li>
             <li><a href="#clientes">Clientes</a></li>
-            <li><a href="#contato">Contato</a></li>
+            <li><a href="contato.html" class="btn-outline">Contato</a></li>
           </ul>
         </nav>
         <div class="menu-toggle">
@@ -45,32 +52,45 @@
 
     <!-- Hero Section -->
     <section class="hero">
-      <div class="hero-overlay"></div>
-      <div class="container">
-        <div class="hero-content">
-          <div class="hero-text">
-            <h2 class="hero-title">26 Anos de Experiência em Facilities</h2>
-            <p class="hero-subtitle">
-              Disciplina e responsabilidade nas parcerias, com serviços
-              personalizados disponíveis 24 horas por dia.
-            </p>
-            <a href="#contato" class="btn-primary">Solicitar Orçamento</a>
-          </div>
-          <div class="hero-counter">
-            <div class="counter-item">
-              <span class="counter" data-target="26">0</span>
-              <span class="counter-label">Anos no Mercado</span>
-            </div>
-            <div class="counter-item">
-              <span class="counter" data-target="500">0</span>
-              <span class="counter-label">+ Clientes Atendidos</span>
-            </div>
-            <div class="counter-item">
-              <span class="counter" data-target="24">0</span>
-              <span class="counter-label">Horas Disponível</span>
-            </div>
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="badge">26 Anos de Experiência</div>
+          <h1 class="hero-title">
+            Excelência em <span class="highlight">Facilities</span> e Serviços
+            Terceirizados
+          </h1>
+          <p class="hero-subtitle">
+            Soluções completas em portaria, limpeza, jardinagem e zeladoria para
+            empresas e condomínios. Conte com nossa experiência de 26 anos para
+            otimizar sua operação.
+          </p>
+          <div class="hero-buttons">
+            <a href="#servicos" class="btn-primary">Nossos Serviços</a>
+            <a href="contato.html" class="btn-secondary">Solicitar Orçamento</a>
           </div>
         </div>
+        <div class="hero-visual">
+          <div class="floating-card card-1">
+            <i class="fas fa-shield-alt"></i>
+            <span>Portaria</span>
+          </div>
+          <div class="floating-card card-2">
+            <i class="fas fa-broom"></i>
+            <span>Limpeza</span>
+          </div>
+          <div class="floating-card card-3">
+            <i class="fas fa-leaf"></i>
+            <span>Jardinagem</span>
+          </div>
+          <div class="floating-card card-4">
+            <i class="fas fa-tools"></i>
+            <span>Zeladoria</span>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <span>Scroll</span>
+        <div class="arrow"></div>
       </div>
     </section>
 
@@ -78,53 +98,69 @@
     <section id="sobre" class="section sobre">
       <div class="container">
         <div class="section-header">
-          <h2>Nossa História</h2>
-          <p>
-            Com 26 anos de experiência, a LEAL SERVICE oferece soluções
-            completas em facilities
-          </p>
+          <h2>Nossa História e Valores</h2>
+          <p>Conheça a trajetória de excelência da LEAL SERVICE</p>
         </div>
         <div class="sobre-content">
           <div class="sobre-text">
             <p>
-              Com disciplina e responsabilidade nas parcerias, a LEAL SERVICE
-              está presente no mercado há 26 anos, atendendo às necessidades
-              individuais de cada cliente com um serviço personalizado
-              disponível 24 horas por dia.
+              Há 26 anos no mercado, a <strong>LEAL SERVICE</strong> se
+              consolidou como referência em serviços de facilities, atendendo
+              empresas e condomínios com profissionalismo, responsabilidade e
+              comprometimento.
             </p>
-            <div class="valores">
-              <h3>Nossos Valores</h3>
-              <div class="valores-grid">
-                <div class="valor-item">
-                  <h4>Inovação</h4>
-                  <p>Sempre buscando melhorar nossos processos</p>
-                </div>
-                <div class="valor-item">
-                  <h4>Confiança</h4>
-                  <p>Transparência em todas as relações</p>
-                </div>
-                <div class="valor-item">
-                  <h4>Humanização</h4>
-                  <p>Valorizamos cada pessoa e sua história</p>
-                </div>
-                <div class="valor-item">
-                  <h4>Vivacidade</h4>
-                  <p>Energia e entusiasmo em tudo que fazemos</p>
-                </div>
-                <div class="valor-item">
-                  <h4>Temperança</h4>
-                  <p>Equilíbrio em nossas decisões</p>
-                </div>
-                <div class="valor-item">
-                  <h4>Fortaleza</h4>
-                  <p>Resiliência para superar desafios</p>
-                </div>
-              </div>
+
+            <p>
+              Nossa missão é proporcionar
+              <strong>tranquilidade e segurança</strong> para nossos clientes,
+              oferecendo soluções personalizadas que atendem às necessidades
+              específicas de cada negócio, sempre com foco na qualidade e na
+              satisfação.
+            </p>
+
+            <div class="destaque-box">
+              <h3>Por que escolher a LEAL SERVICE?</h3>
+              <ul>
+                <li>
+                  <i class="fas fa-check-circle"></i>
+                  <strong>26 anos de experiência</strong> no mercado de
+                  facilities
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Equipe
+                  <strong>altamente qualificada</strong> e treinada
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Serviços
+                  <strong>personalizados</strong> para cada cliente
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Atendimento
+                  <strong>24 horas</strong> por dia
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Compromisso com
+                  <strong>qualidade e segurança</strong>
+                </li>
+              </ul>
             </div>
           </div>
-          <div class="sobre-image">
-            <div class="image-placeholder">
-              <span>Imagem da Equipe Leal Service</span>
+          <div class="sobre-stats">
+            <div class="stat-item">
+              <div class="stat-number" data-target="26">0</div>
+              <div class="stat-label">Anos de Experiência</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" data-target="500">0</div>
+              <div class="stat-label">Clientes Atendidos</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" data-target="1000">0</div>
+              <div class="stat-label">Profissionais</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" data-target="24">0</div>
+              <div class="stat-label">Horas Disponível</div>
             </div>
           </div>
         </div>
@@ -139,65 +175,66 @@
           <p>Soluções completas em facilities para sua empresa ou condomínio</p>
         </div>
         <div class="servicos-grid">
-          <div class="servico-card">
+          <div class="servico-card" data-service="portaria">
             <div class="servico-icon">
-              <span>🏢</span>
+              <i class="fas fa-shield-alt"></i>
             </div>
             <h3>Portaria e Recepção</h3>
             <p>
               Profissionais treinados para recepcionar, controlar acesso e
-              garantir a segurança do seu ambiente.
+              garantir a segurança do seu ambiente com cordialidade e
+              eficiência.
             </p>
+            <div class="servico-features">
+              <span>Controle de Acesso</span>
+              <span>Atendimento Personalizado</span>
+              <span>Monitoramento</span>
+            </div>
           </div>
-          <div class="servico-card">
+          <div class="servico-card" data-service="limpeza">
             <div class="servico-icon">
-              <span>🧹</span>
+              <i class="fas fa-broom"></i>
             </div>
             <h3>Limpeza e Conservação</h3>
             <p>
-              Serviços de limpeza profissional para manter seu ambiente sempre
-              higienizado e organizado.
+              Serviços especializados de limpeza para manter seu ambiente sempre
+              higienizado, organizado e com aparência profissional.
             </p>
+            <div class="servico-features">
+              <span>Produtos Ecológicos</span>
+              <span>Higienização</span>
+              <span>Personalização</span>
+            </div>
           </div>
-          <div class="servico-card">
+          <div class="servico-card" data-service="jardinagem">
             <div class="servico-icon">
-              <span>🌿</span>
+              <i class="fas fa-leaf"></i>
             </div>
             <h3>Jardinagem</h3>
             <p>
               Cuidamos da manutenção de áreas verdes, deixando seu ambiente mais
-              agradável e bonito.
+              agradável, bonito e valorizado.
             </p>
+            <div class="servico-features">
+              <span>Paisagismo</span>
+              <span>Manutenção</span>
+              <span>Irrigação</span>
+            </div>
           </div>
-          <div class="servico-card">
+          <div class="servico-card" data-service="zeladoria">
             <div class="servico-icon">
-              <span>🔧</span>
+              <i class="fas fa-tools"></i>
             </div>
             <h3>Zeladoria</h3>
             <p>
               Manutenção preventiva e corretiva para garantir o funcionamento
-              adequado das instalações.
+              adequado e a conservação das instalações.
             </p>
-          </div>
-          <div class="servico-card">
-            <div class="servico-icon">
-              <span>👥</span>
+            <div class="servico-features">
+              <span>Manutenção</span>
+              <span>Reparos</span>
+              <span>Conservação</span>
             </div>
-            <h3>Recrutamento e Seleção</h3>
-            <p>
-              Selecionamos os melhores profissionais para atender às
-              necessidades específicas do seu negócio.
-            </p>
-          </div>
-          <div class="servico-card">
-            <div class="servico-icon">
-              <span>📚</span>
-            </div>
-            <h3>Treinamentos</h3>
-            <p>
-              Capacitação contínua para garantir a excelência no desempenho de
-              nossos colaboradores.
-            </p>
           </div>
         </div>
       </div>
@@ -212,39 +249,83 @@
         </div>
         <div class="vantagens-content">
           <div class="vantagem-item">
-            <div class="vantagem-number">1</div>
+            <div class="vantagem-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
             <div class="vantagem-text">
-              <h3>Aumento de Lucros e Redução de Investimentos</h3>
+              <h3>Aumento de Lucros e Redução de Custos</h3>
               <p>
-                Ao terceirizar certas funções, as empresas podem direcionar seus
-                recursos para atividades centrais do negócio, o que pode levar a
-                um aumento nos lucros. Além disso, evitam os custos associados a
-                rescisões, afastamentos e demissões.
+                Ao terceirizar serviços não essenciais, sua empresa pode
+                direcionar recursos para atividades estratégicas, reduzindo
+                custos com folha de pagamento, encargos trabalhistas e
+                infraestrutura.
               </p>
             </div>
           </div>
           <div class="vantagem-item">
-            <div class="vantagem-number">2</div>
+            <div class="vantagem-icon">
+              <i class="fas fa-briefcase"></i>
+            </div>
             <div class="vantagem-text">
-              <h3>Maior Produtividade com Serviços Especializados</h3>
+              <h3>Foco no Negócio Principal</h3>
               <p>
-                Ao optar pela terceirização, as empresas buscam expertise em
-                áreas específicas. Isso resulta em um serviço mais eficiente e
-                de maior qualidade, contribuindo para a produtividade geral e
-                impulsionando o crescimento.
+                Delegue atividades secundárias para especialistas e concentre
+                seus esforços no core business da sua empresa, aumentando a
+                eficiência e a competitividade.
               </p>
             </div>
           </div>
           <div class="vantagem-item">
-            <div class="vantagem-number">3</div>
+            <div class="vantagem-icon">
+              <i class="fas fa-users"></i>
+            </div>
             <div class="vantagem-text">
-              <h3>Foco Aprimorado nas Atividades Principais</h3>
+              <h3>Profissionais Qualificados</h3>
               <p>
-                Ao transferir atividades secundárias para empresas
-                especializadas, a organização pode se concentrar com mais vigor
-                em suas atividades principais, melhorando a eficiência
-                operacional e contribuindo para o progresso dos negócios.
+                Acesso a mão de obra especializada, treinada e com experiência
+                comprovada, sem os custos e a burocracia do processo de
+                recrutamento e seleção.
               </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trabalhe Conosco -->
+    <section class="section trabalhe-conosco">
+      <div class="container">
+        <div class="trabalhe-content">
+          <div class="trabalhe-text">
+            <h2>Faça Parte do Nosso Time</h2>
+            <p>
+              Na LEAL SERVICE, valorizamos cada colaborador e investimos no
+              desenvolvimento profissional de nossa equipe. Oferecemos
+              oportunidades de crescimento, ambiente de trabalho positivo e
+              benefícios competitivos.
+            </p>
+            <div class="beneficios">
+              <div class="beneficio-item">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Treinamento Contínuo</span>
+              </div>
+              <div class="beneficio-item">
+                <i class="fas fa-heart"></i>
+                <span>Ambiente Acolhedor</span>
+              </div>
+              <div class="beneficio-item">
+                <i class="fas fa-chart-line"></i>
+                <span>Oportunidades de Crescimento</span>
+              </div>
+            </div>
+            <a href="trabalhe-conosco.html" class="btn-primary"
+              >Enviar Currículo</a
+            >
+          </div>
+          <div class="trabalhe-image">
+            <div class="image-placeholder">
+              <i class="fas fa-users"></i>
+              <span>Nossa Equipe</span>
             </div>
           </div>
         </div>
@@ -258,7 +339,7 @@
           <h2>Nossos Parceiros</h2>
           <p>Empresas que confiam em nossos serviços</p>
         </div>
-        <div class="clientes-slider">
+        <div class="clientes-grid">
           <div class="cliente-logo">Califance</div>
           <div class="cliente-logo">Unimed</div>
           <div class="cliente-logo">TECMAES</div>
@@ -276,91 +357,20 @@
       </div>
     </section>
 
-    <!-- Contato -->
-    <section id="contato" class="section contato">
+    <!-- CTA Final -->
+    <section class="cta-final">
       <div class="container">
-        <div class="section-header">
-          <h2>Entre em Contato</h2>
-          <p>Solicite um orçamento ou tire suas dúvidas</p>
-        </div>
-        <div class="contato-content">
-          <div class="contato-info">
-            <h3>Fale Conosco</h3>
-            <div class="contato-item">
-              <div class="contato-icon">📞</div>
-              <div class="contato-text">
-                <h4>Telefone</h4>
-                <p>(14) 3326-1899</p>
-                <p>(14) 99833-4166</p>
-              </div>
-            </div>
-            <div class="contato-item">
-              <div class="contato-icon">✉️</div>
-              <div class="contato-text">
-                <h4>E-mail</h4>
-                <p>lealiservice@hotmail.com</p>
-              </div>
-            </div>
-            <div class="contato-item">
-              <div class="contato-icon">🌐</div>
-              <div class="contato-text">
-                <h4>Site</h4>
-                <p>www.patriciapaulinorh.com.br</p>
-              </div>
-            </div>
-            <div class="contato-item">
-              <div class="contato-icon">📍</div>
-              <div class="contato-text">
-                <h4>Endereço</h4>
-                <p>Jardim Paulista - CEP: 19907-080</p>
-              </div>
-            </div>
-            <div class="redes-sociais">
-              <h4>Siga-nos</h4>
-              <div class="social-icons">
-                <a href="#" class="social-icon">📘</a>
-                <a href="#" class="social-icon">📷</a>
-                <a href="#" class="social-icon">💼</a>
-              </div>
-            </div>
-          </div>
-          <div class="contato-form">
-            <form id="form-contato">
-              <div class="form-group">
-                <label for="nome">Nome</label>
-                <input type="text" id="nome" name="nome" required />
-              </div>
-              <div class="form-group">
-                <label for="empresa">Empresa</label>
-                <input type="text" id="empresa" name="empresa" />
-              </div>
-              <div class="form-group">
-                <label for="telefone">Telefone</label>
-                <input type="tel" id="telefone" name="telefone" required />
-              </div>
-              <div class="form-group">
-                <label for="email">E-mail</label>
-                <input type="email" id="email" name="email" required />
-              </div>
-              <div class="form-group">
-                <label for="servico">Serviço de Interesse</label>
-                <select id="servico" name="servico">
-                  <option value="">Selecione um serviço</option>
-                  <option value="portaria">Portaria e Recepção</option>
-                  <option value="limpeza">Limpeza e Conservação</option>
-                  <option value="jardinagem">Jardinagem</option>
-                  <option value="zeladoria">Zeladoria</option>
-                  <option value="recrutamento">Recrutamento e Seleção</option>
-                  <option value="treinamento">Treinamentos</option>
-                  <option value="consultoria">Consultoria em RH</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="mensagem">Mensagem</label>
-                <textarea id="mensagem" name="mensagem" rows="5"></textarea>
-              </div>
-              <button type="submit" class="btn-primary">Enviar Mensagem</button>
-            </form>
+        <div class="cta-content">
+          <h2>Pronto para Transformar sua Operação?</h2>
+          <p>
+            Entre em contato conosco e descubra como nossos serviços de
+            facilities podem otimizar sua empresa
+          </p>
+          <div class="cta-buttons">
+            <a href="contato.html" class="btn-primary">Solicitar Orçamento</a>
+            <a href="trabalhe-conosco.html" class="btn-secondary"
+              >Trabalhe Conosco</a
+            >
           </div>
         </div>
       </div>
@@ -385,24 +395,39 @@
               <li><a href="#servicos">Serviços</a></li>
               <li><a href="#vantagens">Vantagens</a></li>
               <li><a href="#clientes">Clientes</a></li>
-              <li><a href="#contato">Contato</a></li>
             </ul>
           </div>
-          <div class="footer-info">
-            <h4>Informações</h4>
-            <p>LEAL SERVICE FACILITIES LTDA</p>
-            <p>CNPJ: 04.121.081/0001-39</p>
-            <p>Jardim Paulista - CEP: 19907-080</p>
+          <div class="footer-contact">
+            <h4>Contato</h4>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <span>(14) 3326-1899</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-mobile-alt"></i>
+              <span>(14) 99833-4166</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <span>lealiservice@hotmail.com</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Jardim Paulista - Ourinhos/SP</span>
+            </div>
           </div>
         </div>
         <div class="footer-bottom">
           <p>
             &copy; 2023 LEAL SERVICE FACILITIES. Todos os direitos reservados.
+            CNPJ: 04.121.081/0001-39
           </p>
         </div>
       </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="js/particles.js"></script>
     <script src="js/main.js"></script>
     <script src="js/animations.js"></script>
   </body>
