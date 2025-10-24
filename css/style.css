@@ -67,6 +67,15 @@ body {
   flex-shrink: 0; /* Impede que a imagem encolha */
 }
 
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
 .logo-text {
   display: flex;
   flex-direction: column;

@@ -37,61 +37,41 @@ document.addEventListener("DOMContentLoaded", function () {
   animateCounters();
 });
 
-// Função de contadores
-// Função de contadores CORRIGIDA
+// FUNÇÃO DEFINITIVA PARA CONTADORES
+// FUNÇÃO DEFINITIVA - VERSÃO setInterval
 function animateCounters() {
-  const counters = document.querySelectorAll(".stat-number");
+  const counters = document.querySelectorAll(".stat-number[data-target]");
 
   counters.forEach((counter) => {
-    // Salva o texto original que contém o número
-    const originalText = counter.textContent;
-
-    // Extrai apenas os números e símbolos (como + e %)
-    let targetText = originalText;
-
-    // Se for um número com símbolo como "500+", extrai o número
-    if (targetText.includes("+")) {
-      targetText = targetText.replace("+", "");
-    }
-
-    // Converte para número
-    const target = isNaN(parseInt(targetText)) ? 0 : parseInt(targetText);
-
-    // Limpa o contador para a animação
-    counter.textContent = "0";
-
-    const increment = target / 50; // Mais rápido
-    let current = 0;
-
-    const updateCounter = () => {
-      if (current < target) {
-        current += increment;
-        counter.textContent = Math.ceil(current);
-
-        // Adiciona o símbolo de volta se existia originalmente
-        if (originalText.includes("+") && Math.ceil(current) >= target) {
-          counter.textContent = target + "+";
-        } else if (originalText.includes("%") && Math.ceil(current) >= target) {
-          counter.textContent = "100%";
-        }
-
-        setTimeout(updateCounter, 30);
-      } else {
-        // Garante o texto final correto
-        counter.textContent = originalText;
-      }
-    };
-
-    // Inicia a animação quando o elemento estiver visível
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          updateCounter();
-          observer.unobserve(entry.target);
-        }
-      });
-    });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            startCounterSimple(counter);
+            observer.unobserve(counter);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
 
     observer.observe(counter);
   });
+}
+
+function startCounterSimple(counter) {
+  const target = parseInt(counter.getAttribute("data-target"));
+  let current = 0;
+  const increment = Math.ceil(target / 50); // Ajuste a velocidade aqui
+
+  const timer = setInterval(() => {
+    current += increment;
+
+    if (current >= target) {
+      counter.textContent = target;
+      clearInterval(timer);
+    } else {
+      counter.textContent = current;
+    }
+  }, 40); // Ajuste o intervalo aqui
 }
